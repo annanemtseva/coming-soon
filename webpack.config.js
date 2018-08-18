@@ -23,10 +23,23 @@ module.exports = {
             use: ['css-loader']
           })
       },
+      {
+        test: /\.(gif|png|jpe?g|svg)$/i,
+        use: [
+          'file-loader',
+          {
+            loader: 'image-webpack-loader',
+            options: {
+              bypassOnDebug: true, // webpack@1.x
+              disable: true, // webpack@2.x and newer
+            },
+          },
+        ],
+      }
     ]
   },
   plugins: [
     new ExtractTextPlugin({filename: './src/assets/css/styles.css'}),
-    new HtmlWebpackPlugin({ template: "./src/index.html" })
+    new HtmlWebpackPlugin({template: "./src/index.html"})
   ]
 };
