@@ -1,0 +1,35 @@
+.sprite {
+    background-image: url(spritesheet.png);
+    background-repeat: no-repeat;
+    display: block;
+}
+
+.sprite-be2 {
+    width: 21px;
+    height: 13px;
+    background-position: -20px -20px;
+}
+
+.sprite-fb2 {
+    width: 15px;
+    height: 14px;
+    background-position: -81px -20px;
+}
+
+.sprite-in2 {
+    width: 17px;
+    height: 16px;
+    background-position: -136px -20px;
+}
+
+.sprite-instas2 {
+    width: 15px;
+    height: 14px;
+    background-position: -193px -20px;
+}
+
+.sprite-tweet2 {
+    width: 18px;
+    height: 14px;
+    background-position: -248px -20px;
+}

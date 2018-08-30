@@ -6,7 +6,7 @@
   "scripts": {
     "start": "node ./node_modules/cross-env/dist/bin/cross-env.js NODE_ENV=development node ./node_modules/webpack-dev-server/bin/webpack-dev-server --config webpack.config.js --mode development --progress --open",
     "dev": "webpack --mode development",
-    "build": "webpack --mode production",
+    "build-prod": "node ./node_modules/cross-env/dist/bin/cross-env.js NODE_ENV=production node ./node_modules/webpack/bin/webpack --config webpack.config.js",
     "watch": "webpack --watch",
     "serve": "webpack-dev-server --mode development --open"
   },
@@ -22,7 +22,9 @@
     "css-loader": "^0.28.11",
     "style-loader": "^0.20.3",
     "extract-text-webpack-plugin": "^4.0.0-beta.0",
-    "image-webpack-loader": "4.3.1"
+    "image-webpack-loader": "4.3.1",
+    "clean-webpack-plugin": "^0.1.19",
+    "copy-webpack-plugin": "^4.0.1"
   },
   "dependencies": {}
 }

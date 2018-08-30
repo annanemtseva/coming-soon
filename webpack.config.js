@@ -2,6 +2,8 @@ var path = require('path');
 const webpack = require("webpack");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const CopyWebpackPlugin = require("copy-webpack-plugin");
+const CleanWebpackPlugin = require('clean-webpack-plugin');
  
 const ENV = process.env.NODE_ENV || 'development';
 const isProd = ENV === 'production';
@@ -40,6 +42,11 @@ module.exports = {
   },
   plugins: [
     new ExtractTextPlugin({filename: './src/assets/css/styles.css'}),
-    new HtmlWebpackPlugin({template: "./src/index.html"})
+    new HtmlWebpackPlugin({template: "./src/index.html"}),
+    new CopyWebpackPlugin([{
+      from: __dirname + '/src/assets',
+      to: path.resolve(__dirname, "dist/src/assets")
+    }]),
+    new CleanWebpackPlugin(['dist']),
   ]
 };
